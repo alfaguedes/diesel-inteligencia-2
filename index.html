@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diesel Inteligência | Mercado de combustíveis</title>
+<style>
+:root{--bg:#0b1110;--panel:#111b18;--panel2:#16231e;--line:#26372f;--text:#edf4ef;--muted:#9aaea3;--green:#b5f36b;--green2:#74d69a;--amber:#f4c66a;--red:#ff8585}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 20% -10%,#203c2c 0,transparent 38%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}.shell{display:grid;grid-template-columns:235px minmax(0,1fr);min-height:100vh}.side{padding:25px 16px;border-right:1px solid var(--line);background:#0b1210}.brand{display:flex;gap:11px;align-items:center;padding:4px 8px 28px}.brand-mark{width:39px;height:39px;background:var(--green);color:#102016;border-radius:12px;display:grid;place-items:center;font-size:22px;font-weight:900}.brand strong{display:block;letter-spacing:-.4px}.brand small{color:var(--muted);font-size:11px}.nav-label{color:#71877a;font-size:10px;letter-spacing:1.6px;font-weight:800;padding:10px 12px}.nav{display:flex;gap:11px;align-items:center;padding:11px 12px;border-radius:10px;color:#a9bbb0;margin:3px 0}.nav.active{background:#203529;color:var(--green);font-weight:700}.nav .ico{width:20px;text-align:center}.side-note{margin:30px 5px 0;padding:14px;border:1px solid var(--line);border-radius:13px;color:var(--muted);font-size:12px}.side-note b{color:var(--green);display:block;margin-bottom:5px}
+main{padding:30px clamp(18px,3vw,44px) 50px;max-width:1600px;width:100%;margin:auto}.top{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:26px}.eyebrow{font-size:11px;color:var(--green);letter-spacing:1.7px;font-weight:800;text-transform:uppercase}.top h1{font-size:clamp(24px,3vw,34px);letter-spacing:-1.2px;margin:4px 0 3px}.sub{color:var(--muted);margin:0}.actions{display:flex;gap:9px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:10px 13px;border-radius:10px;font-weight:650}.btn.primary{background:var(--green);border-color:var(--green);color:#142016}.btn:hover{filter:brightness(1.08)}.status{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:12px;margin:0 0 20px}.dot{width:7px;height:7px;border-radius:50%;background:var(--amber)}.filters{display:flex;gap:10px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);padding:13px;border-radius:14px;margin-bottom:18px}.field{display:flex;flex-direction:column;gap:4px;min-width:140px;flex:1}.field label{font-size:10px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.8px}.field select,.field input{color:var(--text);background:#0d1512;border:1px solid var(--line);border-radius:8px;padding:9px 10px;min-width:0;width:100%;outline:none}.field select:focus,.field input:focus{border-color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:17px}.card{background:linear-gradient(145deg,#14201b,#101815);border:1px solid var(--line);border-radius:15px;padding:17px;min-width:0}.metric-top{display:flex;justify-content:space-between;gap:8px;align-items:center;color:var(--muted);font-size:12px}.tag{font-size:10px;font-weight:800;border-radius:6px;padding:4px 6px;background:#23352a;color:var(--green)}.metric{font-size:clamp(22px,2.5vw,30px);font-weight:800;letter-spacing:-1px;margin:12px 0 3px}.metric-sub{font-size:11px;color:var(--muted)}.section-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,1fr);gap:15px;margin-bottom:15px}.section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:15px}.section-head h2{font-size:15px;margin:0 0 3px}.section-head p{font-size:12px;color:var(--muted);margin:0}.chart-wrap{height:250px;position:relative}.chart-wrap canvas{width:100%;height:100%;display:block}.legend{display:flex;gap:14px;color:var(--muted);font-size:11px;margin-top:8px}.legend span:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:6px}.legend span+span:before{background:var(--amber)}.news-item{padding:13px 0;border-top:1px solid var(--line)}.news-item:first-of-type{border-top:0;padding-top:0}.news-item .meta{font-size:10px;color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:.8px}.news-item a{display:block;text-decoration:none;color:var(--text);font-weight:700;margin:4px 0}.news-item a:hover{color:var(--green)}.news-item p{font-size:12px;color:var(--muted);margin:0}.table-card{margin-bottom:15px}.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:12px}th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.7px;padding:11px 12px;border-bottom:1px solid var(--line)}td{padding:12px;border-bottom:1px solid #202e27}tbody tr:last-child td{border-bottom:0}.price{font-weight:800}.pill{padding:4px 7px;border-radius:6px;background:#1b3025;color:var(--green);font-size:10px;font-weight:800}.empty{text-align:center;color:var(--muted);padding:24px}.foot{font-size:11px;color:#75877d;padding:10px 2px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.foot a{color:var(--green)}.notice{border:1px solid #5c4c29;background:#292416;color:#e7d6a6;padding:12px 14px;border-radius:10px;font-size:12px;margin-bottom:17px}.notice b{color:#ffdf91}.toast{position:fixed;bottom:20px;right:20px;background:var(--green);color:#142016;padding:12px 17px;border-radius:10px;font-weight:750;box-shadow:0 8px 30px #0007;display:none;z-index:5}.smallbtn{border:1px solid var(--line);border-radius:7px;background:transparent;color:var(--muted);padding:5px 8px;font-size:11px}.mobile{display:none}
+@media(max-width:1000px){.shell{grid-template-columns:72px minmax(0,1fr)}.side{padding:20px 9px}.brand{padding:0 7px 25px}.brand>div:last-child,.nav-label,.nav .label,.side-note{display:none}.brand-mark{width:42px;height:42px}.nav{justify-content:center;padding:12px 4px}.nav .ico{font-size:18px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.shell{display:block}.side{display:none}main{padding:22px 14px 35px}.top{align-items:flex-start;flex-direction:column}.actions{width:100%}.actions .btn{flex:1}.grid{gap:8px}.card{padding:13px}.metric{font-size:23px}.filters{gap:8px}.field{min-width:calc(50% - 8px)}.section-grid{gap:10px}.chart-wrap{height:220px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+ <div class="brand"><div class="brand-mark">D</div><div><strong>Diesel Inteligência</strong><small>MARKET INSIGHTS</small></div></div>
+ <div class="nav-label">PAINEL</div>
+ <div class="nav active"><span class="ico">▦</span><span class="label">Visão geral</span></div>
+ <div class="nav"><span class="ico">⌁</span><span class="label">Preços & tendências</span></div>
+ <div class="nav"><span class="ico">▤</span><span class="label">Notícias do setor</span></div>
+ <div class="nav"><span class="ico">⇧</span><span class="label">Importar dados ANP</span></div>
+ <div class="nav-label" style="margin-top:18px">FONTES</div>
+ <a class="nav" href="https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/serie-historica-do-levantamento-de-precos" target="_blank" rel="noopener"><span class="ico">↗</span><span class="label">ANP — série histórica</span></a>
+ <a class="nav" href="https://precos.petrobras.com.br/" target="_blank" rel="noopener"><span class="ico">↗</span><span class="label">Petrobras</span></a>
+ <div class="side-note"><b>Inteligência, não achismo.</b>Compare preços com fonte, período e contexto antes de tomar decisões comerciais.</div>
+</aside>
+<main>
+ <header class="top">
+  <div><div class="eyebrow">CENTRAL DE INTELIGÊNCIA • BRASIL</div><h1>Mercado de diesel</h1><p class="sub">Preços, movimentos e sinais do mercado em um só lugar.</p></div>
+  <div class="actions"><button class="btn" id="exportBtn">↧ Exportar CSV</button><button class="btn primary" id="importBtn">＋ Importar dados ANP</button><input id="fileInput" type="file" accept=".csv,.txt" hidden></div>
+ </header>
+ <div class="status"><span class="dot" id="statusDot"></span><span id="statusText">Aguardando dados oficiais</span><span>·</span><span id="updatedAt">Protótipo local</span></div>
+ <div class="notice"><b>Importante:</b> O painel não inclui preços fictícios. Os valores só aparecem depois que o processo automatizado importar dados oficiais da ANP. A pesquisa é semanal; o sistema verifica diariamente se houve publicação nova.</div>
+ <section class="filters">
+  <div class="field"><label for="product">Combustível</label><select id="product"><option value="all">S10 + S500</option><option value="DIESEL S10">Diesel S10</option><option value="DIESEL S500">Diesel S500</option></select></div>
+  <div class="field"><label for="state">Estado</label><select id="state"><option value="BR">Brasil (todos os estados)</option></select></div>
+  <div class="field"><label for="market">Mercado</label><select id="market"><option value="all">Postos e revenda (ANP)</option><option value="retail">Revenda em postos</option><option value="bulk">Comercial / granel</option></select></div>
+  <div class="field"><label for="search">Município / revenda</label><input id="search" placeholder="Ex.: Luís Eduardo Magalhães"></div>
+ </section>
+ <section class="grid">
+  <div class="card"><div class="metric-top"><span>Média de venda</span><span class="tag">R$/L</span></div><div class="metric" id="avgPrice">—</div><div class="metric-sub" id="avgCaption">Média demonstrativa • S10/S500</div></div>
+  <div class="card"><div class="metric-top"><span>Menor preço observado</span><span class="tag">R$/L</span></div><div class="metric" id="minPrice">—</div><div class="metric-sub" id="minCaption">Dentro da seleção atual</div></div>
+  <div class="card"><div class="metric-top"><span>Maior preço observado</span><span class="tag">R$/L</span></div><div class="metric" id="maxPrice">—</div><div class="metric-sub" id="maxCaption">Dentro da seleção atual</div></div>
+  <div class="card"><div class="metric-top"><span>Registros analisados</span><span class="tag">ANP</span></div><div class="metric" id="recordCount">0</div><div class="metric-sub" id="recordCaption">Amostra demonstrativa</div></div>
+ </section>
+ <section class="section-grid">
+  <div class="card">
+   <div class="section-head"><div><h2>Evolução do preço médio</h2><p>Histórico por mês • conforme dados importados</p></div><button class="smallbtn" id="resetBtn">Limpar filtros</button></div>
+   <div class="chart-wrap"><canvas id="priceChart" aria-label="Gráfico histórico de preços"></canvas></div>
+   <div class="legend"><span>Diesel S10</span><span>Diesel S500</span></div>
+  </div>
+  <div class="card">
+   <div class="section-head"><div><h2>Radar de notícias</h2><p>Atalhos para acompanhar fontes do setor</p></div></div>
+   <div class="news-item"><div class="meta">Fonte oficial • ANP</div><a href="https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/serie-historica-do-levantamento-de-precos" target="_blank" rel="noopener">Levantamento semanal de preços de combustíveis ↗</a><p>Dados de revenda por produto e abrangência geográfica. Verifique a data da pesquisa.</p></div>
+   <div class="news-item"><div class="meta">Preços • Petrobras</div><a href="https://precos.petrobras.com.br/" target="_blank" rel="noopener">Preços e composição do diesel ↗</a><p>Referência para acompanhar preços praticados pela Petrobras e a composição ao consumidor.</p></div>
+   <div class="news-item"><div class="meta">Notícias • Agência Brasil</div><a href="https://agenciabrasil.ebc.com.br/economia" target="_blank" rel="noopener">Economia, petróleo e combustíveis ↗</a><p>Notícias econômicas e decisões que podem influenciar o mercado brasileiro.</p></div>
+   <div class="news-item"><div class="meta">Notícias • Reuters</div><a href="https://www.reuters.com/business/energy/" target="_blank" rel="noopener">Mercado internacional de energia ↗</a><p>Petróleo, oferta global e fatores externos que afetam os custos de combustíveis.</p></div>
+  </div>
+ </section>
+ <section class="card table-card">
+  <div class="section-head"><div><h2>Preços observados</h2><p id="tableCaption">Dados oficiais importados da ANP. Confira a semana de referência e a data de coleta.</p></div><span class="tag" id="tableBadge">AGUARDANDO DADOS</span></div>
+  <div class="table-scroll"><table><thead><tr><th>Coleta</th><th>Estado</th><th>Município</th><th>Revenda</th><th>Produto</th><th>Preço (R$/L)</th><th>Fonte</th></tr></thead><tbody id="priceRows"></tbody></table></div>
+ </section>
+ <footer class="foot"><span>Diesel Inteligência • MVP 0.1 • Os preços oficiais podem ser defasados em relação ao mercado spot.</span><span>Fonte principal: <a href="https://www.gov.br/anp/" target="_blank" rel="noopener">ANP</a></span></footer>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const demo = [
+ {date:"2026-10-05",state:"BA",city:"Luís Eduardo Magalhães",seller:"Posto Modelo Oeste",product:"DIESEL S10",price:6.19,source:"Demonstração"},
+ {date:"2026-10-05",state:"BA",city:"Barreiras",seller:"Posto Exemplo Cerrado",product:"DIESEL S10",price:6.29,source:"Demonstração"},
+ {date:"2026-10-05",state:"GO",city:"Rio Verde",seller:"Posto Exemplo Centro",product:"DIESEL S10",price:6.09,source:"Demonstração"},
+ {date:"2026-10-05",state:"MT",city:"Rondonópolis",seller:"Posto Exemplo MT",product:"DIESEL S10",price:6.39,source:"Demonstração"},
+ {date:"2026-10-05",state:"SP",city:"Ribeirão Preto",seller:"Posto Exemplo SP",product:"DIESEL S10",price:5.99,source:"Demonstração"},
+ {date:"2026-10-05",state:"PR",city:"Cascavel",seller:"Posto Exemplo PR",product:"DIESEL S10",price:6.09,source:"Demonstração"},
+ {date:"2026-10-05",state:"BA",city:"Luís Eduardo Magalhães",seller:"Posto Modelo Oeste",product:"DIESEL S500",price:5.99,source:"Demonstração"},
+ {date:"2026-10-05",state:"BA",city:"Barreiras",seller:"Posto Exemplo Cerrado",product:"DIESEL S500",price:6.09,source:"Demonstração"},
+ {date:"2026-10-05",state:"GO",city:"Rio Verde",seller:"Posto Exemplo Centro",product:"DIESEL S500",price:5.89,source:"Demonstração"},
+ {date:"2026-10-05",state:"MT",city:"Rondonópolis",seller:"Posto Exemplo MT",product:"DIESEL S500",price:6.19,source:"Demonstração"},
+ {date:"2026-10-05",state:"SP",city:"Ribeirão Preto",seller:"Posto Exemplo SP",product:"DIESEL S500",price:5.89,source:"Demonstração"},
+ {date:"2026-10-05",state:"PR",city:"Cascavel",seller:"Posto Exemplo PR",product:"DIESEL S500",price:5.99,source:"Demonstração"}
+];
+const months = [];
+let records = [];
+let realData = false;
+let feedMeta = null;
+const $ = id => document.getElementById(id);
+const money = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const norm = s => (s||"").toString().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim().toUpperCase();
+function populateStates(){
+ const state=$("state"), current=state.value;
+ const names=[...new Set(records.map(r=>r.state).filter(Boolean))].sort();
+ state.innerHTML='<option value="BR">Brasil (todos os estados)</option>'+names.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join("");
+ if(names.includes(current))state.value=current;
+}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function filtered(){
+ const p=$("product").value, st=$("state").value, q=norm($("search").value), m=$("market").value;
+ return records.filter(r=>(p==="all"||r.product===p)&&(st==="BR"||r.state===st)&&(!q||norm(r.city).includes(q)||norm(r.seller).includes(q))&&(m!=="bulk"));
+}
+function render(){
+ const data=filtered(), prices=data.map(r=>r.price).filter(Number.isFinite);
+ $("avgPrice").textContent=prices.length?money(prices.reduce((a,b)=>a+b,0)/prices.length):"—";
+ $("minPrice").textContent=prices.length?money(Math.min(...prices)):"—";
+ $("maxPrice").textContent=prices.length?money(Math.max(...prices)):"—";
+ $("recordCount").textContent=prices.length.toLocaleString("pt-BR");
+ $("avgCaption").textContent=realData?"Média simples dos registros filtrados":"Média demonstrativa • S10/S500";
+ $("minCaption").textContent=prices.length?"Menor valor na seleção atual":"Nenhum registro encontrado";
+ $("maxCaption").textContent=prices.length?"Maior valor na seleção atual":"Nenhum registro encontrado";
+ $("recordCaption").textContent=realData?"Registros importados da ANP":"Dados carregados do arquivo oficial";
+ $("tableCaption").textContent=realData?"Dados carregados no navegador a partir do arquivo importado. Confira as datas de coleta.":"Dados oficiais importados da ANP. Confira a semana de referência e a data de coleta.";
+ $("tableBadge").textContent=realData?"DADOS IMPORTADOS":"AGUARDANDO DADOS";
+ $("priceRows").innerHTML=data.slice(0,100).map(r=>`<tr><td>${esc(r.date||"—")}</td><td>${esc(r.state||"—")}</td><td>${esc(r.city||"—")}</td><td>${esc(r.seller||"—")}</td><td><span class="pill">${esc(r.product)}</span></td><td class="price">${money(r.price)}</td><td>${esc(r.source||"ANP")}</td></tr>`).join("")||'<tr><td colspan="7" class="empty">Nenhum registro para esses filtros.</td></tr>';
+ $("statusText").textContent=realData?"Dados importados • análise local":"Aguardando dados oficiais";
+ $("statusDot").style.background=realData?"var(--green2)":"var(--amber)";
+ drawChart(data);
+}
+function drawChart(data){
+ const c=$("priceChart"), rect=c.getBoundingClientRect(), dpr=window.devicePixelRatio||1;
+ c.width=Math.max(300,rect.width)*dpr;c.height=Math.max(180,rect.height)*dpr;
+ const ctx=c.getContext("2d");ctx.scale(dpr,dpr);
+ const w=c.width/dpr,h=c.height/dpr,pad={l:43,r:12,t:15,b:28},cw=w-pad.l-pad.r,ch=h-pad.t-pad.b;
+ ctx.clearRect(0,0,w,h);
+ const s10=[],s500=[];
+ if(realData){
+  const grouped={};
+  data.forEach(r=>{const key=(r.date||"").slice(0,7);if(!key)return;grouped[key]??={};grouped[key][r.product]??=[];grouped[key][r.product].push(r.price)});
+  const keys=Object.keys(grouped).sort().slice(-8);
+  if(keys.length){months.splice(0,months.length,...keys.map(k=>k.slice(5)+"/"+k.slice(2,4)));s10.splice(0,s10.length,...keys.map(k=>avg(grouped[k]["DIESEL S10"])));s500.splice(0,s500.length,...keys.map(k=>avg(grouped[k]["DIESEL S500"])));}
+ }
+ if(!s10.length && !s500.length){ctx.fillStyle="#9aaea3";ctx.font="12px system-ui";ctx.fillText("O histórico aparecerá após a primeira importação oficial.",pad.l, h/2);return;} const valid=[...s10,...s500].filter(Number.isFinite);let min=Math.floor((Math.min(...(valid.length?valid:[5.5]))-.15)*10)/10,max=Math.ceil((Math.max(...(valid.length?valid:[6.5]))+.15)*10)/10;
+ const y=v=>pad.t+(max-v)/(max-min)*ch,x=i=>pad.l+i*cw/Math.max(1,months.length-1);
+ ctx.font="10px system-ui";ctx.fillStyle="#82978a";ctx.strokeStyle="#26372f";ctx.lineWidth=1;
+ for(let i=0;i<=4;i++){let v=min+(max-min)*i/4,yy=pad.t+ch-i*ch/4;ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(w-pad.r,yy);ctx.stroke();ctx.fillText(v.toFixed(1).replace(".",","),3,yy+3)}
+ months.forEach((m,i)=>{ctx.fillStyle="#82978a";ctx.fillText(m,x(i)-10,h-7)});
+ const series=(arr,color)=>{ctx.strokeStyle=color;ctx.lineWidth=2.5;ctx.beginPath();let started=false;arr.forEach((v,i)=>{if(!Number.isFinite(v))return;if(!started){ctx.moveTo(x(i),y(v));started=true}else ctx.lineTo(x(i),y(v))});ctx.stroke();arr.forEach((v,i)=>{if(!Number.isFinite(v))return;ctx.fillStyle=color;ctx.beginPath();ctx.arc(x(i),y(v),3.3,0,Math.PI*2);ctx.fill()})};
+ series(s10,"#b5f36b");series(s500,"#f4c66a");
+}
+function avg(a){return a&&a.length?a.reduce((x,y)=>x+y,0)/a.length:undefined}
+function parseCSV(text){
+ const first=text.split(/\r?\n/,1)[0]||"", delimiter=(first.match(/;/g)||[]).length> (first.match(/,/g)||[]).length?";":",";
+ const lines=text.replace(/^\uFEFF/,"").split(/\r?\n/).filter(x=>x.trim());
+ function split(line){let out=[],v="",q=false;for(let i=0;i<line.length;i++){let c=line[i];if(c==='"'&&line[i+1]==='"'&&q){v+='"';i++}else if(c==='"')q=!q;else if(c===delimiter&&!q){out.push(v);v=""}else v+=c}out.push(v);return out}
+ const headers=split(lines.shift()).map(x=>norm(x).replace(/\s+/g," "));
+ const idx=(...terms)=>headers.findIndex(h=>terms.some(t=>h.includes(t)));
+ const productI=idx("PRODUTO"),priceI=idx("VALOR DE VENDA"),dateI=idx("DATA DA COLETA"),stateI=idx("ESTADO - SIGLA"),cityI=idx("MUNICIPIO"),sellerI=idx("REVENDA");
+ if([productI,priceI,stateI,cityI].some(i=>i<0))throw new Error("Não reconheci as colunas. Use o CSV de preços da ANP com Produto, Valor de Venda, Estado - Sigla e Município.");
+ const out=[];
+ for(const line of lines){const a=split(line),prod=norm(a[productI]||"");if(!prod.includes("DIESEL"))continue;
+ let product=prod.includes("S10")?"DIESEL S10":prod.includes("S500")?"DIESEL S500":null;if(!product)continue;
+ let raw=(a[priceI]||"").replace(/\s/g,"").replace(/\./g,"").replace(",",".");if((a[priceI]||"").includes(".")&&!(a[priceI]||"").includes(","))raw=a[priceI];
+ const price=Number(raw);if(!Number.isFinite(price)||price<=0)continue;
+ out.push({date:a[dateI]||"",state:a[stateI]||"",city:a[cityI]||"",seller:a[sellerI]||"Revenda não informada",product,price,source:"ANP"});
+ }
+ if(!out.length)throw new Error("O arquivo foi lido, mas não encontrei linhas de Diesel S10/S500 com preços válidos.");
+ return out;
+}
+$("importBtn").onclick=()=>$("fileInput").click();
+$("fileInput").onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const text=await file.text(),data=parseCSV(text);records=data;realData=true;populateStates();render();
+fetch("./data/prices.json", {cache:"no-store"})
+ .then(r=>{if(!r.ok) throw new Error("feed ainda não publicado"); return r.json();})
+ .then(payload=>{
+   feedMeta=payload.meta||{};
+   records=Array.isArray(payload.records)?payload.records:[];
+   realData=records.length>0;
+   populateStates();
+   $("updatedAt").textContent=feedMeta.checked_at_utc ? "Verificado em "+feedMeta.checked_at_utc.replace("T"," ").replace("Z"," UTC") : "Fonte oficial ANP";
+   if(!records.length) $("statusText").textContent="Ainda não há dados processados; execute o workflow no GitHub.";
+   render();
+ })
+ .catch(()=>{$("statusText").textContent="Aguardando primeira importação oficial da ANP"; $("statusDot").style.background="var(--amber)";});$("updatedAt").textContent="Arquivo: "+file.name;toast(`${data.length.toLocaleString("pt-BR")} registros importados.`)}catch(err){alert(err.message)}finally{e.target.value=""}};
+["product","state","market","search"].forEach(id=>$(id).addEventListener("input",render));
+$("resetBtn").onclick=()=>{$("product").value="all";$("state").value="BR";$("market").value="all";$("search").value="";render()};
+$("exportBtn").onclick=()=>{const data=filtered();const rows=[["Data da coleta","Estado","Município","Revenda","Produto","Preço (R$/L)","Fonte"],...data.map(r=>[r.date,r.state,r.city,r.seller,r.product,r.price,r.source])];const csv="\uFEFF"+rows.map(row=>row.map(v=>'"'+String(v??"").replace(/"/g,'""')+'"').join(";")).join("\r\n");const url=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8;"}));const a=document.createElement("a");a.href=url;a.download="diesel-inteligencia.csv";a.click();URL.revokeObjectURL(url);toast("CSV exportado.")};
+function toast(msg){const t=$("toast");t.textContent=msg;t.style.display="block";setTimeout(()=>t.style.display="none",2600)}
+window.addEventListener("resize",()=>drawChart(filtered()));
+populateStates();render();
+fetch("./data/prices.json", {cache:"no-store"})
+ .then(r=>{if(!r.ok) throw new Error("feed ainda não publicado"); return r.json();})
+ .then(payload=>{
+   feedMeta=payload.meta||{};
+   records=Array.isArray(payload.records)?payload.records:[];
+   realData=records.length>0;
+   populateStates();
+   $("updatedAt").textContent=feedMeta.checked_at_utc ? "Verificado em "+feedMeta.checked_at_utc.replace("T"," ").replace("Z"," UTC") : "Fonte oficial ANP";
+   if(!records.length) $("statusText").textContent="Ainda não há dados processados; execute o workflow no GitHub.";
+   render();
+ })
+ .catch(()=>{$("statusText").textContent="Aguardando primeira importação oficial da ANP"; $("statusDot").style.background="var(--amber)";});
+</script>
+</body></html>
