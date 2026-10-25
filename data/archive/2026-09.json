@@ -6,7 +6,7 @@
     "source_file": "09-dados-abertos-precos-2026-09-diesel-gnv.csv",
     "source_sha256": "02b139c783e647c036482a6bfe4c423da8e835d4861b66b2b165da3cbf033be4",
     "reference_month": "2026-09",
-    "checked_at_utc": "2026-10-24T15:59:38+00:00",
+    "checked_at_utc": "2026-10-25T16:26:09+00:00",
     "record_count": 13682,
     "note": "Verificação diária. A ANP não necessariamente publica novos preços todos os dias."
   },
